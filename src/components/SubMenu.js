@@ -4,19 +4,19 @@ import styled from 'styled-components'
 
 const SidebarLink = styled(Link)`
 	display: flex;
-	color: #e1e9fc;
+	color: #031a4b;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	padding: 12px;
+	padding-left: 16px;
+	padding-right: 20px;
 	list-style: none;
-	height: 60px;
 	text-decoration: none;
-	font-size: 18px;
-
+	font-weight: 500;
+	font-size: 20px;
 	&:hover {
-		background: #252831;
-		border-left: 4px solid #632ce4;
-		cursor: pointer;
+		color: #f35e36;
+		background-color: rgba(244, 245, 249, 0.5);
 	}
 `
 
@@ -25,18 +25,19 @@ const SidebarLabel = styled.span`
 `
 
 const DropdownLink = styled(Link)`
-	background: #414757;
-	height: 60px;
-	padding-left: 3rem;
+	background: #fff;
+	padding: 12px;
+	padding-left: 16px;
+	padding-right: 20px;
+	font-weight: 500;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	color: #f5f5f5;
-	font-size: 18px;
-
+	color: #031a4b;
+	font-size: 20px;
 	&:hover {
-		background: #632ce4;
-		cursor: pointer;
+		color: #f35e36;
+		background-color: rgba(244, 245, 249, 0.5);
 	}
 `
 
@@ -47,7 +48,10 @@ const SubMenu = ({ item }) => {
 
 	return (
 		<>
-			<SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+			<SidebarLink
+				to={item.path ? item.path : ''}
+				onClick={item.subNav && showSubnav}
+			>
 				<div>
 					{item.icon}
 					<SidebarLabel>{item.title}</SidebarLabel>
